@@ -36,13 +36,18 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 ```{r}
 plot(SIMS~ARM,data=data)
 ```
-The scatter plot shows that the data is going uphill to the right.  It apprears to have a positive correlation. 
+The scatter plot shows that the data is going uphill to the right.  It appears to have a positive correlation. 
 
 ### Numerical results
-
-
+```{r}
+cor(SIMS~ARM,data=data)
+```
+The correlation we have found is 0.69, which is a positive correlation. 
 ### Inferential  (Build model.1)
-
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
 #### Predict at target point
 
 
