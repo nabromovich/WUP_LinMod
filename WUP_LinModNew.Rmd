@@ -66,6 +66,8 @@ new <- data.frame(ARM = 88, GRIP=94)
 predict(model.1, new)
 
 ```
+
+
 Using the predict function also gives us the same result.
 
 
@@ -109,7 +111,7 @@ If we look at the adjusted r-squared value of this GRIP data, it is smaller than
 
 #### predict model.2 at target point
 ```{r}
-predict(model.2, new)
+predict(model.2, new, interval = "prediction")
 
 ```
 
