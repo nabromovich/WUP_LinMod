@@ -48,7 +48,17 @@ The correlation we have found is 0.69, which is a positive correlation.
 model.1 <- lm(SIMS~ARM,data=data)
 summary.lm(model.1)
 ```
+The equation of a line is y=mx+b. 
+The fit equation is SIMS=0.054563*ARM-4.095160
+
 #### Predict at target point
+SIMS=0.054563*88-4.095160
+```{r}
+0.054563*88-4.095160
+
+```
+After running the fit equation we ger a result of 0.71 which will be our prediction.
+
 
 
 #### scatterplot with model fit
@@ -57,13 +67,20 @@ summary.lm(model.1)
 ## Model 2 SIM~GRIP
 
 ### Now add in scatterplot
-
+```{r}
+plot(SIMS~GRIP,data=data)
+```
 
 ### Numerical results 
-
+```{r}
+cor(SIMS~GRIP,data=data)
+```
 
 ### Inferential  (Build model.2)
-  
+```{r}
+model.2 <- lm(Height~dadheight + momheight,data=davisdata)
+summary.lm(model.2)
+```  
 
 #### predict model.2 at target point
 
