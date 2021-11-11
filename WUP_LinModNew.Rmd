@@ -36,6 +36,7 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 ```{r}
 plot(SIMS~ARM,data=data)
 ```
+  
 The scatter plot shows that the data is going uphill to the right.  It appears to have a positive correlation. 
 
 ### Numerical results
@@ -77,7 +78,8 @@ basicNN <- ggplot(data,aes(y=SIMS,x=ARM))
 basicNN + geom_point() + geom_smooth(method=lm)
 
 ```
-  Here is the best fit line for our data, we can see that if we look for an x-value of 88 for ARM and the y-value is about 0.7 as predicted. 
+  
+Here is the best fit line for our data, we can see that if we look for an x-value of 88 for ARM and the y-value is about 0.7 as predicted. 
   
 
 ## Model 2 SIM~GRIP
@@ -86,7 +88,8 @@ basicNN + geom_point() + geom_smooth(method=lm)
 ```{r}
 plot(SIMS~GRIP,data=data)
 ```
-  The scatter plot shows that the data is more center to the middle of the plot but still shows a positive correlation 
+  
+The scatter plot shows that the data is more center to the middle of the plot but still shows a positive correlation 
 
 
 ### Numerical results 
@@ -129,7 +132,7 @@ Here is the tesult of the scatter plot and our best fit line for our GRIP and SI
 ```{r}
 cor(SIMS~ARM+GRIP,data=data)
 ```
-
+The correlation with both ARM and GRIP together are the highest value rather than when compared to using ARM or GRIP on thier own.  
   
 ### Inferential  (Build 2-dimentional model.3)
 ```{r}
@@ -137,12 +140,21 @@ model.3 <- lm(SIMS~ARM+GRIP,data=data)
 summary.lm(model.3)
 ```
 #### predict model.3 at target point
-  
+```{r}
+predict(model.3, new)
+
+```  
 
 ## Comparing nested models ANOVA Test
 
 ### Model.1 vs Model.3
 ### Model.2 vs Model.3
 
+```{r}
+anova(model.1,model.3)
+```
+```{r}
+anova(model.2,model.3)
+```
 ## Informally compare Model.1 with model.2
 
