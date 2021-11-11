@@ -86,22 +86,40 @@ Here is the best fit line for our data, we can see that if we look for an x-valu
 ```{r}
 plot(SIMS~GRIP,data=data)
 ```
+The scatter plot shows that the data is more center to the middle of the plot but still shows a positive correlation 
+
 
 ### Numerical results 
 ```{r}
 cor(SIMS~GRIP,data=data)
 ```
+SIMS with GRIP has a smaller correlation when compared to SIMS with ARM. 
+
 
 ### Inferential  (Build model.2)
 ```{r}
-model.2 <- lm(Height~dadheight + momheight,data=davisdata)
+model.2 <- lm(SIMS~GRIP,data=data)
 summary.lm(model.2)
-```  
+```
+If we look at the adjusted r-squared value of this GRIP data, it is smaller than the ARM data.  In addition, the residual standard error is larger for this GRIP data than the ARM data.  Both of these values indicate that Model 1 is more better in explaining our prediction due to it being a better model.  
+
 
 #### predict model.2 at target point
+```{r}
+0.054563*94-4.095160
+
+```
+
 
 #### now add the model fit to our plot for model.2
-  
+
+```{r}
+basicNN <- ggplot(data,aes(y=SIMS,x=GRIP))
+
+
+basicNN + geom_point() + geom_smooth(method=lm)
+
+``` 
 
 
 ## Model 3 SIM~ARM+GRIP
