@@ -21,7 +21,6 @@ Read about the data from the website where it is staged.  Then form three regres
 ```{r include=FALSE}
 require(tidyverse)
 require(tigerstats)
-require(rgl)
 require(knitr)
 
 ```
@@ -34,6 +33,10 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 ## Model 1 SIM~ARMS
 
 ### scatterplot
+```{r}
+plot(SIMS~ARM,data=data)
+```
+The scatter plot shows that the data is going uphill to the right.  It apprears to have a positive correlation. 
 
 ### Numerical results
 
