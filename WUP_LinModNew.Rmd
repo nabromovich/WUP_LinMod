@@ -126,7 +126,7 @@ basicNN + geom_point() + geom_smooth(method=lm)
 
 ``` 
   
-Here is the tesult of the scatter plot and our best fit line for our GRIP and SIMS data.  If we use our prediction value it mached that plot. 
+Here is the result of the scatter plot and our best fit line for our GRIP and SIMS data.  If we use our prediction value it matched that plot. 
 
 ## Model 3 SIM~ARM+GRIP
 
