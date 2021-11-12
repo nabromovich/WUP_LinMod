@@ -161,8 +161,15 @@ predict(model.3, new, interval = "predict")
 ```{r}
 anova(model.1,model.3)
 ```
+  
+The model with GRIP and ARM is a better model than SIMS and ARM and we can see that from this anova function.
+
+
+
 ```{r}
 anova(model.2,model.3)
 ```
+Model 3 is a better model than model 2 or model 1 as shown by our the total of errors being less than the other models. 
+
 ## Informally compare Model.1 with model.2
 
