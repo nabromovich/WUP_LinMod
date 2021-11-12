@@ -169,7 +169,13 @@ The model with GRIP and ARM is a better model than SIMS and ARM and we can see t
 ```{r}
 anova(model.2,model.3)
 ```
-Model 3 is a better model than model 2 or model 1 as shown by our the total of errors being less than the other models. 
+Model 3 is a better model than model 2 or model 1 as shown by our the total of errors being less than the other models. The values of the RSS was 243.07 vs 188.43
 
 ## Informally compare Model.1 with model.2
+```{r}
+anova(model.1,model.2)
+```
+  
+Model 1 has a smaller RSS of 217.88 while model 2 has 243.07.  This shows that informally the model with ARM is better than the model with GRIP
+
 
