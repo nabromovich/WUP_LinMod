@@ -134,18 +134,24 @@ Here is the result of the scatter plot and our best fit line for our GRIP and SI
 ```{r}
 cor(SIMS~ARM+GRIP,data=data)
 ```
-The correlation with both ARM and GRIP together are the highest value rather than when compared to using ARM or GRIP on thier own.  
+The correlation with both ARM and GRIP together are the highest value rather than when compared to using ARM or GRIP on their own.  
   
 ### Inferential  (Build 2-dimentional model.3)
 ```{r}
 model.3 <- lm(SIMS~ARM+GRIP,data=data)
 summary.lm(model.3)
 ```
+
+  SIMS= -5.43 + GRIP * 0.02 + ARM * 0.04
+  The adjusted R-squared is higher than the pervous data showing this is a better model for the data being used.
+
 #### predict model.3 at target point
 ```{r}
-predict(model.3, new)
+predict(model.3, new, interval = "predict")
 
 ```  
+
+
 
 ## Comparing nested models ANOVA Test
 
